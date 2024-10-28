@@ -49,7 +49,15 @@ public class GeleiaTowerCommand implements TabExecutor {
                 break;
             }
             case "gravity-item" -> {
-                // TODO
+                ItemStack itemStack = new ItemStack(Material.REDSTONE);
+                itemStack.editMeta(meta -> {
+                    meta.setDisplayName("§cAlternador de Gravidade");
+                    meta.setCustomModelData(1);
+                    meta.setLore(List.of("","§7Alternar a gravidade de todos os jogadores."));
+                });
+
+                p.getInventory().addItem(itemStack);
+                p.sendMessage("§aItem de gravidade adicionado ao seu inventário.");
                 break;
             }
             default -> {

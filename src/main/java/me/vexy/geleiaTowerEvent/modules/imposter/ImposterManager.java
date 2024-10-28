@@ -26,7 +26,7 @@ public class ImposterManager {
         bow = new ItemStack(Material.BOW);
         arrow = new ItemStack(Material.ARROW);
         arrow.setAmount(5);
-        main.getServer().getPluginManager().registerEvents(new ImposterEvents(), main);
+        main.getServer().getPluginManager().registerEvents(new ImposterEvents(this), main);
     }
 
     public void selectImposters() {

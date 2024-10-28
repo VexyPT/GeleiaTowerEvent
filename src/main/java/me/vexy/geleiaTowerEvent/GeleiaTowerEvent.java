@@ -2,6 +2,7 @@ package me.vexy.geleiaTowerEvent;
 
 import lombok.Getter;
 import me.vexy.geleiaTowerEvent.commands.GeleiaTowerCommand;
+import me.vexy.geleiaTowerEvent.modules.gravity.GravityManager;
 import me.vexy.geleiaTowerEvent.modules.imposter.ImposterManager;
 import me.vexy.geleiaTowerEvent.modules.joker.JokerManager;
 import me.vexy.geleiaTowerEvent.utils.GlowingEntities;
@@ -30,9 +31,11 @@ public final class GeleiaTowerEvent extends JavaPlugin {
         instance = this;
         // Plugin startup logic
         new JokerManager(this); // Não é mt bom fazer assim, mas é o que tem pra hoje
+        new GravityManager(this);
 
         glowingEntities = new GlowingEntities(this);
         imposterManager = new ImposterManager(this);
+
 
         getServer().getPluginCommand("geleiatower").setExecutor(new GeleiaTowerCommand());
 

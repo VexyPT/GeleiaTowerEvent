@@ -18,6 +18,11 @@ import org.bukkit.inventory.ItemStack;
  */
 public class ImposterEvents implements Listener {
 
+    private final ImposterManager imposterManager;
+
+    public ImposterEvents(ImposterManager imposterManager) {
+        this.imposterManager = imposterManager;
+    }
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
@@ -43,7 +48,6 @@ public class ImposterEvents implements Listener {
         if (!item.hasItemMeta()) return;
         if (!item.getItemMeta().hasCustomModelData()) return;
         if (item.getItemMeta().getCustomModelData() != 1) return;
-        ImposterManager imposterManager = GeleiaTowerEvent.get().getImposterManager();
         imposterManager.selectImposters();
         event.getPlayer().sendMessage("§aImpostores selecionados!");
         event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_BIT, 1, 1);
