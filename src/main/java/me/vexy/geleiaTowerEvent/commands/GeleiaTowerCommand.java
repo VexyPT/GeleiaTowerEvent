@@ -66,6 +66,18 @@ public class GeleiaTowerCommand implements TabExecutor {
                 p.sendMessage("§aChão de TNT colocado.");
                 break;
             }
+            case "sneak-item" -> {
+                ItemStack itemStack = new ItemStack(Material.SLIME_BALL);
+                itemStack.editMeta(meta -> {
+                    meta.setDisplayName("§cAlternador do Shift explosivo");
+                    meta.setCustomModelData(1);
+                    meta.setLore(List.of("","§7Clique para ativar alternar."));
+                });
+
+                p.getInventory().addItem(itemStack);
+                p.sendMessage("§aItem de sneak adicionado ao seu inventário.");
+                break;
+            }
             default -> {
                 p.sendMessage("§cUso: /geleiatower <imposter-item/gravity-item>");
                 return true;
