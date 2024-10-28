@@ -1,10 +1,6 @@
 package me.vexy.geleiaTowerEvent.modules.extraheart;
 
 import me.vexy.geleiaTowerEvent.GeleiaTowerEvent;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.event.ClickEvent;
-import net.kyori.adventure.text.event.HoverEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;

@@ -1,9 +1,6 @@
 package me.vexy.geleiaTowerEvent.modules.gravity;
 
-import me.vexy.geleiaTowerEvent.GeleiaTowerEvent;
-import me.vexy.geleiaTowerEvent.modules.imposter.ImposterManager;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

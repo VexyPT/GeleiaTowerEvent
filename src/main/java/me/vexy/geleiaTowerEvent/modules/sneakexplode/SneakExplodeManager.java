@@ -1,6 +1,5 @@
 package me.vexy.geleiaTowerEvent.modules.sneakexplode;
 
-import lombok.Getter;
 import me.vexy.geleiaTowerEvent.GeleiaTowerEvent;
 
 /**
