@@ -1,6 +1,7 @@
 package me.vexy.geleiaTowerEvent.commands;
 
 import me.vexy.geleiaTowerEvent.GeleiaTowerEvent;
+import me.vexy.geleiaTowerEvent.modules.floor.TntFloorUtil;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -60,6 +61,11 @@ public class GeleiaTowerCommand implements TabExecutor {
                 p.sendMessage("§aItem de gravidade adicionado ao seu inventário.");
                 break;
             }
+            case "chao-de-tnt" -> {
+                TntFloorUtil.setFloor(p);
+                p.sendMessage("§aChão de TNT colocado.");
+                break;
+            }
             default -> {
                 p.sendMessage("§cUso: /geleiatower <imposter-item/gravity-item>");
                 return true;
@@ -72,7 +78,7 @@ public class GeleiaTowerCommand implements TabExecutor {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 1) {
-            return List.of("imposter-item", "gravity-item");
+            return List.of("imposter-item", "gravity-item", "chao-de-tnt");
         }
         return List.of();
     }
