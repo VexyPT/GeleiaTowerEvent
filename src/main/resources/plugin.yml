@@ -4,3 +4,9 @@ main: me.vexy.geleiaTowerEvent.GeleiaTowerEvent
 api-version: '1.21'
 authors: [ vexy ]
 description: My first plugin ever
+commands:
+  geleiatower:
+    description: Command to start the event
+    usage: /geleiatower
+    permission: geleiatower.command
+    aliases: [gt]
