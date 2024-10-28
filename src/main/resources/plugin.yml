@@ -2,8 +2,8 @@ name: GeleiaTowerEvent
 version: '1.0-SNAPSHOT'
 main: me.vexy.geleiaTowerEvent.GeleiaTowerEvent
 api-version: '1.21'
-authors: [ vexy ]
-description: My first plugin ever
+authors: [ vexy, rok ]
+description: plugin para evento
 commands:
   geleiatower:
     description: Command to start the event
