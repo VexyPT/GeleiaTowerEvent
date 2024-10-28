@@ -23,7 +23,7 @@ public class TntFloorUtil {
 
         int high = 99;
 
-        Bukkit.getScheduler().runTaskAsynchronously(GeleiaTowerEvent.get(), () -> {
+        Bukkit.getScheduler().runTask(GeleiaTowerEvent.get(), () -> {
             for (int x = xMin; x <= xMax; x++) {
                 for (int z = zMin; z <= zMax; z++) {
                     world.getBlockAt(x, high, z).setType(Material.TNT);

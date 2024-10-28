@@ -54,10 +54,13 @@ public class ImposterManager {
     private List<Player> selectRandomImposter() {
         List<Player> imposters = new ArrayList<>();
         List<Player> onlinePlayers = new ArrayList<>(Bukkit.getOnlinePlayers().stream().filter(player -> player.getGameMode().equals(GameMode.SURVIVAL)).toList());
+        if (onlinePlayers.isEmpty()){
+            return List.of();
+        }
         int tries = 0;
         while (imposters.size() < 5 && tries < 20) {
             tries++;
-            Player player = onlinePlayers.get(random.nextInt(onlinePlayers.size()));
+            Player player = onlinePlayers.get(random.nextInt(0, onlinePlayers.size()));
             if (imposters.contains(player)) continue;
             if (GeleiaTowerEvent.get().isOp(player)) continue;
             imposters.add(player);

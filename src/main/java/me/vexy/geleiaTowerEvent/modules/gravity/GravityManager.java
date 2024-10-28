@@ -27,10 +27,10 @@ public class GravityManager {
     public void switchGravity(Player player) {
         gravity = !gravity;
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            onlinePlayer.getAttribute(Attribute.GENERIC_GRAVITY).setBaseValue(gravity ? gravityOff : gravityOn);
-            onlinePlayer.showTitle(Title.title(Component.text("§fGravidade " + (gravity ? "§cdesativada" : "§aativada")), Component.empty()));
+            onlinePlayer.getAttribute(Attribute.GENERIC_GRAVITY).setBaseValue(gravity ? gravityOn : gravityOff);
+            onlinePlayer.showTitle(Title.title(Component.text("§fGravidade " + (gravity ? "§aativada" : "§cdesativada")), Component.empty()));
             onlinePlayer.playSound(onlinePlayer.getLocation(), gravity ? Sound.BLOCK_BEACON_ACTIVATE : Sound.BLOCK_BEACON_DEACTIVATE, 1, 1);
         }
-        player.sendMessage("§7[§e!§7] §fVocê " + (gravity ? "§cativou" : "§cdesativou") + " §fa gravidade!");
+        player.sendMessage("§7[§e!§7] §fVocê " + (gravity ? "§aativou" : "§cdesativou") + " §fa gravidade!");
     }
 }
