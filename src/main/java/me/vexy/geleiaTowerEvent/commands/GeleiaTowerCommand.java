@@ -90,7 +90,7 @@ public class GeleiaTowerCommand implements TabExecutor {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 1) {
-            return List.of("imposter-item", "gravity-item", "chao-de-tnt");
+            return List.of("imposter-item", "gravity-item", "chao-de-tnt", "sneak-item");
         }
         return List.of();
     }
