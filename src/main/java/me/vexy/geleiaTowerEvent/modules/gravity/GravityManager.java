@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
  * @author Rok, Pedro Lucas nmm. Created on 27/10/2024
  * @project GeleiaTowerEvent
  */
+
 public class GravityManager {
 
     protected final float gravityOff = 0.01f;
