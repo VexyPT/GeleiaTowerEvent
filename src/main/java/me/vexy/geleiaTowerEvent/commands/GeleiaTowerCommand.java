@@ -78,6 +78,18 @@ public class GeleiaTowerCommand implements TabExecutor {
                 p.sendMessage("§aItem de sneak adicionado ao seu inventário.");
                 break;
             }
+            case "coracao-extra" -> {
+                ItemStack itemStack = new ItemStack(Material.FERMENTED_SPIDER_EYE);
+                itemStack.editMeta(meta -> {
+                    meta.setDisplayName("§c§nVida Extra");
+                    meta.setCustomModelData(1);
+                    meta.setLore(List.of("","§7Ao ficar com esse item no inventário", "§7você ganha vida extra."));
+                });
+
+                p.getInventory().addItem(itemStack);
+                p.sendMessage("§aItem de vida extra adicionado no seu inventário.");
+                break;
+            }
             default -> {
                 p.sendMessage("§cUso: /geleiatower <imposter-item/gravity-item>");
                 return true;
@@ -90,7 +102,7 @@ public class GeleiaTowerCommand implements TabExecutor {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 1) {
-            return List.of("imposter-item", "gravity-item", "chao-de-tnt", "sneak-item");
+            return List.of("imposter-item", "gravity-item", "chao-de-tnt", "sneak-item", "coracao-extra");
         }
         return List.of();
     }
