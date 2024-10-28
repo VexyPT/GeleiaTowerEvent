@@ -31,6 +31,14 @@ public class ImposterEvents implements Listener {
         event.setDeathMessage(null);
         Player killer = event.getEntity().getKiller();
 
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            try {
+                GeleiaTowerEvent.get().getGlowingEntities().unsetGlowing(event.getPlayer(), onlinePlayer);
+            } catch (Exception ignored) {
+            }
+        }
+        event.getPlayer().setGlowing(false);
+
         if (killer != null) {
             Bukkit.broadcast(Component.text("§7[§c!§7] §c"+ killer.getName() + "§7 matou o impostor §c"+event.getPlayer().getName()+"§7!"));
             return;

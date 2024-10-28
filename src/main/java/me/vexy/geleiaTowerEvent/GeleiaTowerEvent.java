@@ -32,7 +32,7 @@ public final class GeleiaTowerEvent extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        // Plugin startup logic
+
         new JokerManager(this); // Não é mt bom fazer assim, mas é o que tem pra hoje
         new GravityManager(this);
         new ExtraHeartManager(this);
