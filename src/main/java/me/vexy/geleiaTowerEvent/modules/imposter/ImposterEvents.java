@@ -37,6 +37,7 @@ public class ImposterEvents implements Listener {
             } catch (Exception ignored) {
             }
         }
+        event.getPlayer().setGlowing(false);
         event.getPlayer().setDisplayName(event.getPlayer().getName().replaceFirst("§c", ""));
 
         if (killer != null) {
