@@ -34,6 +34,8 @@ public class ImposterManager {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             for (Player imposter : imposters) {
                 imposter.setGlowing(true);
+                imposter.setDisplayName("§c" + imposter.getName() + "§r");
+                imposter.setPlayerListName("§c" + imposter.getName());
                 try {
                     GeleiaTowerEvent.get().getGlowingEntities().setGlowing(imposter, onlinePlayer, ChatColor.RED);
                 } catch (Exception e) {
