@@ -14,7 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,8 +27,8 @@ import java.util.logging.Logger;
  * <p>
  * <b>1.17 -> 1.21</b>
  *
- * @author SkytAsul
  * @version 1.3.5
+ * @author SkytAsul
  */
 public class GlowingEntities implements Listener {
 
@@ -106,7 +105,7 @@ public class GlowingEntities implements Listener {
     /**
      * Make the {@link Entity} passed as a parameter glow with its default team color.
      *
-     * @param entity   entity to make glow
+     * @param entity entity to make glow
      * @param receiver player which will see the entity glowing
      * @throws ReflectiveOperationException
      */
@@ -117,9 +116,9 @@ public class GlowingEntities implements Listener {
     /**
      * Make the {@link Entity} passed as a parameter glow with the specified color.
      *
-     * @param entity   entity to make glow
+     * @param entity entity to make glow
      * @param receiver player which will see the entity glowing
-     * @param color    color of the glowing effect
+     * @param color color of the glowing effect
      * @throws ReflectiveOperationException
      */
     public void setGlowing(Entity entity, Player receiver, ChatColor color) throws ReflectiveOperationException {
@@ -131,7 +130,7 @@ public class GlowingEntities implements Listener {
      * Make the entity with specified entity ID glow with its default team color.
      *
      * @param entityID entity id of the entity to make glow
-     * @param teamID   internal string used to add the entity to a team
+     * @param teamID internal string used to add the entity to a team
      * @param receiver player which will see the entity glowing
      * @throws ReflectiveOperationException
      */
@@ -143,9 +142,9 @@ public class GlowingEntities implements Listener {
      * Make the entity with specified entity ID glow with the specified color.
      *
      * @param entityID entity id of the entity to make glow
-     * @param teamID   internal string used to add the entity to a team
+     * @param teamID internal string used to add the entity to a team
      * @param receiver player which will see the entity glowing
-     * @param color    color of the glowing effect
+     * @param color color of the glowing effect
      * @throws ReflectiveOperationException
      */
     public void setGlowing(int entityID, String teamID, Player receiver, ChatColor color)
@@ -156,12 +155,12 @@ public class GlowingEntities implements Listener {
     /**
      * Make the entity with specified entity ID glow with the specified color, and keep some flags.
      *
-     * @param entityID   entity id of the entity to make glow
-     * @param teamID     internal string used to add the entity to a team
-     * @param receiver   player which will see the entity glowing
-     * @param color      color of the glowing effect
+     * @param entityID entity id of the entity to make glow
+     * @param teamID internal string used to add the entity to a team
+     * @param receiver player which will see the entity glowing
+     * @param color color of the glowing effect
      * @param otherFlags internal flags that must be kept (on fire, crouching...). See
-     *                   <a href="https://wiki.vg/Entity_metadata#Entity">wiki.vg</a> for more informations.
+     *        <a href="https://wiki.vg/Entity_metadata#Entity">wiki.vg</a> for more informations.
      * @throws ReflectiveOperationException
      */
     public void setGlowing(int entityID, String teamID, Player receiver, ChatColor color, byte otherFlags)
@@ -207,7 +206,7 @@ public class GlowingEntities implements Listener {
      * <p>
      * This has <b>no effect</b> on glowing status given by another plugin or vanilla behavior.
      *
-     * @param entity   entity to remove glowing effect from
+     * @param entity entity to remove glowing effect from
      * @param receiver player which will no longer see the glowing effect
      * @throws ReflectiveOperationException
      */
@@ -404,8 +403,8 @@ public class GlowingEntities implements Listener {
                     watcherDummy =
                             watcherBuilder.getClass().getDeclaredMethod(remapped ? "build" : "a").invoke(watcherBuilder);
                 } else {
-                    var watcherConstructorArgsType = new Class<?>[]{entityClass};
-                    var watcherConstructorArgs = new Object[]{markerEntity};
+                    var watcherConstructorArgsType = new Class<?>[] {entityClass};
+                    var watcherConstructorArgs = new Object[] {markerEntity};
                     watcherDummy = dataWatcherClass.getDeclaredConstructor(watcherConstructorArgsType)
                             .newInstance(watcherConstructorArgs);
                 }
@@ -514,7 +513,7 @@ public class GlowingEntities implements Listener {
             } catch (Exception ex) {
                 String errorMsg =
                         "Glowing Entities reflection failed to initialize. The util is disabled. Please ensure your version ("
-                        + Bukkit.getServer().getClass().getPackage().getName() + ") is supported.";
+                                + Bukkit.getServer().getClass().getPackage().getName() + ") is supported.";
                 if (logger == null) {
                     ex.printStackTrace();
                     System.err.println(errorMsg);
@@ -640,7 +639,7 @@ public class GlowingEntities implements Listener {
                     packets[i] = packetRemove.newInstance(entitiesId[i]);
                 }
             } else {
-                packets = new Object[]{packetRemove.newInstance(entitiesId)};
+                packets = new Object[] {packetRemove.newInstance(entitiesId)};
             }
 
             sendPackets(player, packets);
@@ -738,7 +737,7 @@ public class GlowingEntities implements Listener {
                 @SuppressWarnings("rawtypes")
                 private void handlePacketBundle(Object bundle) throws ReflectiveOperationException {
                     Iterable subPackets = (Iterable) packetBundlePackets.invoke(bundle);
-                    for (Iterator iterator = subPackets.iterator(); iterator.hasNext(); ) {
+                    for (Iterator iterator = subPackets.iterator(); iterator.hasNext();) {
                         Object packet = iterator.next();
 
                         if (packet.getClass().equals(packetMetadata)) {
@@ -1033,7 +1032,8 @@ public class GlowingEntities implements Listener {
                     null,
                     null,
                     null
-            );
+            )
+            ;
 
             private final int major, minor;
             private final boolean remapped;
